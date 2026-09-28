@@ -1,0 +1,91 @@
+#include <stdio.h>
+void main()
+{
+    int size,ch,pos,value,search;
+    printf("Enter the size:");
+    scanf("%d",&size);
+   
+    int arr[size];
+    printf("Enter values of array:");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+   
+    do
+    {
+        printf("\n1.Insert");
+        printf("\n2.Delete");
+        printf("\n3.Search");
+        printf("\n4.Display");
+        printf("\n5.Exit");
+       
+        printf("\nEnter your choice:");
+        scanf("%d",&ch);
+       
+        switch(ch)
+        {
+            case 1:
+                printf("Enter position:");
+                scanf("%d",&pos);
+                printf("Enter value:");
+                scanf("%d",&value);
+                size++;
+                for(int i=size-1;i>pos;i--)
+                {
+                    arr[i]=arr[i-1];
+                }
+                arr[pos]=value;
+                printf("\nValue %d is inserted in %d",value,pos);
+                break;
+               
+            case 2:
+                printf("Enter position:");
+                scanf("%d",&pos);
+                for(int i=pos;i<size;i++)
+                {
+                    arr[pos]=arr[pos+1];
+                }
+                size--;
+                printf("\n Value is deleted in position %d",pos);
+                break;
+               
+            case 3:
+                printf("Enter value to Search:");
+                scanf("%d",&search);
+                int found=0;
+                for(int i=0;i<size;i++)
+                {
+                    if(arr[i]==search)
+                    {
+                        found=1;
+                        break;
+                    }
+                    else
+                    {
+                        found=0;
+                    }
+                }
+                if(found==1)
+                {
+                    printf("Value found");
+                }
+                else
+                {
+                    printf("Value not found");
+                }
+                break;
+               
+            case 4:
+                printf("Value of array:");
+                for(int i=0;i<size;i++)
+                {
+                    printf("%d ",arr[i]);
+                }
+                break;
+               
+            case 5:
+                break;
+        }
+    }while(ch!=5);
+}
