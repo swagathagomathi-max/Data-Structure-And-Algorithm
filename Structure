@@ -1,0 +1,56 @@
+// Simple Structure in Global Scope - Example 1
+
+#include <stdio.h>
+
+struct 
+{
+    int batch;
+}bat1, bat2;
+
+void main() 
+{
+   bat1.batch = 2022;
+   bat2.batch = 2023;
+   printf("I Year  :%d batch",bat1.batch);
+   printf("\nII Year :%d batch",bat2.batch);
+}
+
+----------------------------------------------------------------------------
+
+// Initializing Structure and accessing its members
+
+#include <stdio.h>
+struct car
+{
+   int year;
+   char *model;
+   char *fueltype;
+   float mileage;
+};
+
+void main() 
+{
+  // Initialising Structure
+  struct car c1 = {2030,"Swag","Petrol",88.6};
+  struct car c2 = {2030,"Spy","Petrol",115.5};
+  
+  // Accessing members
+  printf("Car 1 Details");
+  printf("\nYear      : %d",c1.year);
+  printf("\nModel     : %s",c1.model);
+  printf("\nFuel Type : %s",c1.fueltype);
+  printf("\nMileage   : %.1f",c1.mileage);
+  
+  printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+  printf("\nCar 2 Details");
+  printf("\nYear      : %d",c2.year);
+  printf("\nModel     : %s",c2.model);
+  printf("\nFuel Type : %s",c2.fueltype);
+  printf("\nMileage   : %.1f",c2.mileage);
+ 
+}
+
+-----------------------------------------------------------------------------------
+
+// Pointer to Strucutre
+
